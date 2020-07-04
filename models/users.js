@@ -20,6 +20,10 @@ const User = new Schema({
         required: true,
         enum: ['M', 'F'],
     },
+    age: {
+        type: Number,
+        required: true,
+    },
 })
 
 User.index({username: 1}, {unique: true})
