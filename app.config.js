@@ -1,3 +1,3 @@
-exports.port = process.env.PORT;
+exports.port = process.env.PORT
 
-exports.mongoUri = process.env.MONGO_URI;
+exports.mongoUri = process.env.MONGO_URI

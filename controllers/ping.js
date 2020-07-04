@@ -1,5 +1,5 @@
-const { sendSuccess, sendError } = require("../helpers/response");
+const {sendSuccess, sendError} = require('../helpers/response')
 
 exports.ping = (req, res) => {
-  sendSuccess(req, res)("UET-FLIX");
-};
+    sendSuccess(req, res)('UET-FLIX')
+}
