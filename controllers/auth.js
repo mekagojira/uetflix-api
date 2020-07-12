@@ -21,6 +21,20 @@ exports.authMiddleware = async (req, res, next) => {
     }
 }
 
+exports.postInformation = async (req, res) => {
+    const _sendSuccess = sendSuccess(req, res)
+    const _sendError = sendError(req, res)
+
+    try {
+        const args = {...req.body}
+        const {_id} = req.user
+        const data = await authActns.postInformation(_id, args)
+        return _sendSuccess(data)
+    } catch (e) {
+        return _sendError(e)
+    }
+}
+
 exports.testAuth = (req, res) => {
     sendSuccess(req, res)(req.user)
 }

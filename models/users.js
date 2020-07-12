@@ -7,6 +7,10 @@ const User = new Schema({
         type: String,
         required: true,
     },
+    userId: {
+        type: Number,
+        required: true,
+    },
     password: {
         type: String,
         required: true,
@@ -24,8 +28,12 @@ const User = new Schema({
         type: Number,
         required: true,
     },
+    occupation: {
+        type: String,
+    },
+    zip_code: {type: String},
 })
 
-User.index({username: 1}, {unique: true})
+User.index({username: 1, userId: 1}, {unique: true})
 
 module.exports = model(name, User, name)
